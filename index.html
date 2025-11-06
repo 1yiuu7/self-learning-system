@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>臺北市立復興高級中學 - 自主學習計畫學生申請系統</title>
+  <style>
+    body {
+      font-family: "Noto Sans TC", sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      background-color: #fff;
+      padding: 20px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin: 0 5px;
+      background-color: #e0e0e0;
+      transition: 0.3s;
+    }
+
+    nav a.active {
+      background-color: #333;
+      color: white;
+    }
+
+    nav a:hover {
+      background-color: #555;
+      color: white;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70vh;
+    }
+
+    .login-box {
+      background-color: white;
+      padding: 40px 50px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      width: 350px;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>臺北市立復興高級中學<br>自主學習計畫學生申請系統</h1>
+    <nav>
+      <a href="#" class="active">學生登入</a>
+      <a href="#">申請表填寫</a>
+      <a href="#">歷史資訊</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="login-box">
+      <h2>學生登入</h2>
+
+      <label for="class">班級</label>
+      <input type="text" id="class" placeholder="例如：201 或 高一忠" />
+
+      <label for="seat">座號</label>
+      <input type="number" id="seat" placeholder="輸入座號" />
+
+      <label for="account">帳號</label>
+      <input type="text" id="account" placeholder="輸入帳號" />
+
+      <label for="password">密碼</label>
+      <input type="password" id="password" placeholder="輸入密碼" />
+
+      <button onclick="login()">登入</button>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 臺北市立復興高級中學 自主學習計畫學生申請系統
+  </footer>
+
+  <script>
+    function login() {
+      const className = document.getElementById('class').value.trim();
+      const seat = document.getElementById('seat').value.trim();
+      const account = document.getElementById('account').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (!className || !seat || !account || !password) {
+        alert("請完整輸入所有欄位！");
+        return;
+      }
+
+      // 範例動作：登入後跳轉到申請資料頁
+      window.location.href = "apply.html";
+    }
+  </script>
+</body>
+</html>
