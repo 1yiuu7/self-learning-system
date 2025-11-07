@@ -1,236 +1,231 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>臺北市立復興高級中學 自主學習計畫 學生申請系統</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* CSS Reset and Global Styles */
-        :root {
-            --primary-color: #4A90E2;
-            --background-color: #f0f2f5;
-            --card-background: #ffffff;
-            --input-background: #e9ecef;
-            --text-color: #333333;
-            --text-light: #888888;
-            --border-radius-card: 16px;
-            --border-radius-pill: 50px;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>臺北市立復興高級中學 自主學習計畫 學生申請系統</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <!-- 字體 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Noto Sans TC', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            padding: 20px 0;
-        }
+  <style>
+    :root {
+      --primary-color: #4A90E2;
+      --background-color: #f0f2f5;
+      --card-background: #ffffff;
+      --input-background: #e9ecef;
+      --text-color: #333333;
+      --text-light: #888888;
+      --border-radius-card: 16px;
+      --border-radius-pill: 50px;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
 
-        /* Main Container */
-        .container {
-            width: 100%;
-            max-width: 480px;
-            padding: 15px;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Header Navigation */
-        .top-nav {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 20px 0;
+    }
 
-        .nav-button {
-            flex: 1;
-            padding: 10px 15px;
-            border: none;
-            border-radius: var(--border-radius-pill);
-            background-color: var(--card-background);
-            font-size: 16px;
-            font-weight: 500;
-            color: var(--text-color);
-            text-align: center;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
+    .container {
+      width: 100%;
+      max-width: 480px;
+      padding: 15px;
+    }
 
-        .nav-button:hover {
-            background-color: #f8f9fa;
-        }
-        
-        .nav-button.disabled {
-            background-color: #e0e0e0;
-            color: #a0a0a0;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
 
-        /* System Info Card */
-        .system-info-card {
-            background-color: var(--card-background);
-            border-radius: var(--border-radius-card);
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            margin-bottom: 40px;
-        }
+    .nav-button {
+      flex: 1;
+      padding: 10px 15px;
+      border: none;
+      border-radius: var(--border-radius-pill);
+      background-color: var(--card-background);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-color);
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
 
-        .logo {
-            width: 80px;
-            height: auto;
-            margin: 0 auto 15px;
-        }
+    .nav-button:hover {
+      background-color: #f8f9fa;
+    }
 
-        .system-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
+    .nav-button.disabled {
+      background-color: #e0e0e0;
+      color: #a0a0a0;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
 
-        .system-subtitle {
-            font-size: 18px;
-            font-weight: 500;
-            color: var(--text-light);
-        }
-        
-        /* Login Section */
-        .login-section {
-            margin-bottom: 40px;
-        }
-        
-        .login-title {
-            font-size: 32px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    .system-info-card {
+      background-color: var(--card-background);
+      border-radius: var(--border-radius-card);
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      margin-bottom: 40px;
+    }
 
-        .login-card {
-            background-color: var(--card-background);
-            border-radius: var(--border-radius-card);
-            padding: 30px 25px;
-            box-shadow: var(--shadow);
-        }
-        
-        .form-group {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+    .logo {
+      width: 100px;
+      height: auto;
+      margin: 0 auto 15px;
+      display: block;
+    }
 
-        .form-group:last-child {
-            margin-bottom: 0;
-        }
+    .system-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
 
-        .form-group label {
-            font-size: 18px;
-            font-weight: 500;
-            width: 80px; /* Fixed width for alignment */
-            flex-shrink: 0;
-            text-align: left;
-            margin-right: 15px;
-        }
+    .system-subtitle {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-light);
+    }
 
-        .form-group input {
-            flex-grow: 1;
-            padding: 12px 20px;
-            border: none;
-            background-color: var(--input-background);
-            border-radius: var(--border-radius-pill);
-            font-size: 16px;
-            font-family: 'Noto Sans TC', sans-serif;
-            outline: none;
-            transition: box-shadow 0.3s;
-        }
+    .login-section {
+      margin-bottom: 40px;
+    }
 
-        .form-group input:focus {
-            box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.5);
-        }
+    .login-title {
+      font-size: 32px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-    </style>
+    .login-card {
+      background-color: var(--card-background);
+      border-radius: var(--border-radius-card);
+      padding: 30px 25px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .form-group label {
+      font-size: 18px;
+      font-weight: 500;
+      width: 80px;
+      flex-shrink: 0;
+      text-align: left;
+      margin-right: 15px;
+    }
+
+    .form-group input {
+      flex-grow: 1;
+      padding: 12px 20px;
+      border: none;
+      background-color: var(--input-background);
+      border-radius: var(--border-radius-pill);
+      font-size: 16px;
+      font-family: 'Noto Sans TC', sans-serif;
+      outline: none;
+      transition: box-shadow 0.3s;
+    }
+
+    .form-group input:focus {
+      box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.5);
+    }
+  </style>
 </head>
+
 <body>
+  <div class="container">
+    <!-- 導覽列 -->
+    <header>
+      <nav class="top-nav">
+        <a href="#" class="nav-button">系統首頁</a>
+        <a href="#" class="nav-button disabled">申請表填寫</a>
+        <a href="#" class="nav-button disabled">歷史資訊</a>
+      </nav>
+    </header>
 
-    <div class="container">
+    <main>
+      <!-- 系統資訊 -->
+      <section class="system-info-card">
+        <!-- ✅ 校徽圖片：與 index.html 同資料夾 -->
+        <img src="1.png" alt="學校Logo" class="logo">
+        <h1 class="system-title">臺北市立復興高級中學</h1>
+        <p class="system-subtitle">自主學習計畫<br>學生申請系統</p>
+      </section>
 
-        <!-- 頂部導覽列 -->
-        <header>
-            <nav class="top-nav">
-                <a href="#" class="nav-button">系統首頁</a>
-                <a href="#" class="nav-button disabled">申請表填寫</a>
-                <a href="#" class="nav-button disabled">歷史資訊</a>
-            </nav>
-        </header>
+      <!-- 學生登入 -->
+      <section class="login-section">
+        <h2 class="login-title">學生登入</h2>
+        <div class="login-card">
+          <form action="#" method="post">
+            <div class="form-group">
+              <label for="student-class">班級</label>
+              <input type="text" id="student-class" name="student-class" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="student-seat">座號</label>
+              <input type="text" id="student-seat" name="student-seat" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="student-name">姓名</label>
+              <input type="text" id="student-name" name="student-name" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="student-id">學號</label>
+              <input type="text" id="student-id" name="student-id" placeholder="">
+            </div>
+          </form>
+        </div>
+      </section>
 
-        <main>
-            <!-- 系統資訊 -->
-            <section class="system-info-card">
-                <!-- 重新繪製的 SVG Logo -->
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTAwIDgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik01MCA1IEw5NSAzNSBMOTUgNzUgTDUgNzUgTDUgMzUgWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJub25lIi8+PHBhdGggZD0iTTUwIDEwIEwxMCA0MCBMNTAgNzAgTDkwIDQwIFoiIGZpbGw9IiMwMDVDREQiLz48cGF0aCBkPSJNMjUgNDIgQzQwIDMwLCA2MCAzMCwgNzUgNDIiIHN0cm9rZT0iI0ZGMDAwMCIgc3Ryb2tlLXdpZHRoPSI4IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjI1IiByPSI2IiBmaWxsPSIjRkZEMDAwIi8+PC9zdmc+" alt="學校Logo" class="logo">
-                <h1 class="system-title">臺北市立復興高級中學</h1>
-                <p class="system-subtitle">自主學習計畫<br>學生申請系統</p>
-            </section>
-
-            <!-- 學生登入 -->
-            <section class="login-section">
-                <h2 class="login-title">學生登入</h2>
-                <div class="login-card">
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <label for="student-class">班級</label>
-                            <input type="text" id="student-class" name="student-class" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="student-seat">座號</label>
-                            <input type="text" id="student-seat" name="student-seat" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="student-name">姓名</label>
-                            <input type="text" id="student-name" name="student-name" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="student-id">學號</label>
-                            <input type="text" id="student-id" name="student-id" placeholder="">
-                        </div>
-                    </form>
-                </div>
-            </section>
-
-            <!-- 教師登入 -->
-            <section class="login-section">
-                <h2 class="login-title">教師登入</h2>
-                <div class="login-card">
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <label for="teacher-account">帳號</label>
-                            <input type="text" id="teacher-account" name="teacher-account" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="teacher-password">密碼</label>
-                            <input type="password" id="teacher-password" name="teacher-password" placeholder="">
-                        </div>
-                    </form>
-                </div>
-            </section>
-
-        </main>
-
-    </div>
-
+      <!-- 教師登入 -->
+      <section class="login-section">
+        <h2 class="login-title">教師登入</h2>
+        <div class="login-card">
+          <form action="#" method="post">
+            <div class="form-group">
+              <label for="teacher-account">帳號</label>
+              <input type="text" id="teacher-account" name="teacher-account" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="teacher-password">密碼</label>
+              <input type="password" id="teacher-password" name="teacher-password" placeholder="">
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
