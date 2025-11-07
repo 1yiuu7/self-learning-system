@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>自主學習計畫申請系統</title>
+    
+    <!-- Tailwind CSS and Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,18 +16,29 @@
         }
     </style>
     
-    <!-- 1. 加入 Babel Standalone 核心函式庫 -->
+    <!-- Add Babel to transpile JSX/TSX in the browser -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
-    <!-- 2. 加入 React 的 CDN (這部分你原本就有，但我們確保它是正確的) -->
+    <!-- Add React and ReactDOM from CDN -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
 <body class="bg-gray-100">
     <div id="root"></div>
 
-    <!-- 3. 修改你的 script 標籤，讓 Babel 來處理它 -->
-    <!-- 注意：type="text/babel" 和 data-type="module" 是重點 -->
+    <!-- Load the main app entry point using Babel -->
+    <!-- The type="text/babel" and data-type="module" are crucial for Babel to process this file -->
     <script type="text/babel" data-type="module" src="./index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
 </body>
 </html>
